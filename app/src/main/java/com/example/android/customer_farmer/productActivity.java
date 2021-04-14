@@ -47,6 +47,13 @@ public class productActivity extends AppCompatActivity {
 
                 } }
         });
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), vieworders_farmer.class);
+                startActivity(intent);
+            }
+        });
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
