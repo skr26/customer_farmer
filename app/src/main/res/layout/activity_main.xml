@@ -45,5 +45,18 @@
         android:text="Existing user! Go to Sign in page"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/btnsignup"/>
-
+    <Button
+        android:id="@+id/btnsignup_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" farmer Signup"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/btnsignin"/>
+    <Button
+        android:id="@+id/btnsignin_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" farmer Signin"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/btnsignup_f"/>
 </RelativeLayout>

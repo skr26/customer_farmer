@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".farmer_signup">
+    <EditText
+        android:id="@+id/username_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Farmer Name"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/password_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/username_f"/>
+
+    <EditText
+        android:id="@+id/repassword_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Retype Password"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/password_f"/>
+
+    <Button
+        android:id="@+id/btnsignup_f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/repassword_f"/>
+
+</RelativeLayout>
