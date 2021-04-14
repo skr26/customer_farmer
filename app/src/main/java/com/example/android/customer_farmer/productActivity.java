@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class productActivity extends AppCompatActivity {
 
     EditText productname, productdesc, productprice;
-    Button addproduct;
+    Button addproduct,v;
     DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class productActivity extends AppCompatActivity {
         productdesc = (EditText) findViewById(R.id.productdesc);
         productprice = (EditText) findViewById(R.id.productprice);
         addproduct = (Button) findViewById(R.id.add);
+        v=(Button) findViewById(R.id.orders_farmer);
         DB = new DBHelper(this);
 
         addproduct.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +46,13 @@ public class productActivity extends AppCompatActivity {
                     }
 
                 } }
+        });
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), vieworders_farmer.class);
+                startActivity(intent);
+            }
         });
 
     }

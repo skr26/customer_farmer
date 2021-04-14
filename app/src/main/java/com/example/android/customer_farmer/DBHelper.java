@@ -18,7 +18,8 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("create Table farmer(username_f TEXT primary key, password_f TEXT)");
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
         MyDB.execSQL("create Table farmer_products(product_id INTEGER PRIMARY KEY AUTOINCREMENT, farmer_id TEXT,product_name TEXT, product_desc TEXT, product_price INTEGER, FOREIGN KEY (farmer_id) REFERENCES farmer (username_f))");
-
+        MyDB.execSQL("create Table orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT,farmer_id TEXT,customer_id TEXT,product_id INTEGER)");
+        MyDB.execSQL("Insert into orders values (1,'keer','keerthana',2)");
     }
 
     @Override
@@ -96,6 +97,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getListContents(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor data = db.rawQuery("SELECT * FROM farmer", null);
+        return data;
+    }
+    public Cursor getOrderContents(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM orders where farmer_id = ?", new String[]{id});
         return data;
     }
 
