@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
-    Button signup, signin;
+    Button signup, signin,signin_f,signup_f;
     DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         repassword = (EditText) findViewById(R.id.repassword);
         signup = (Button) findViewById(R.id.btnsignup);
         signin = (Button) findViewById(R.id.btnsignin);
+        signup_f=(Button) findViewById(R.id.btnsignup_f);
+        signin_f=(Button)findViewById(R.id.btnsignin_f);
         DB = new DBHelper(this);
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        signup_f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), farmer_signup.class);
+                startActivity(intent);
+            }
+        });
+        signin_f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), farmer_login.class);
                 startActivity(intent);
             }
         });
