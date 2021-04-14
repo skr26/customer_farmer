@@ -93,6 +93,10 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
-
+    public Cursor getListContents(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM farmer", null);
+        return data;
+    }
 
 }
