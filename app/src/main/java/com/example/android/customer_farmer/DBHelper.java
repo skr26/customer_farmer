@@ -18,6 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("create Table farmer(username_f TEXT primary key, password_f TEXT)");
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
         MyDB.execSQL("create Table farmer_products(product_id INTEGER PRIMARY KEY AUTOINCREMENT, farmer_id TEXT,product_name TEXT, product_desc TEXT, product_price INTEGER, FOREIGN KEY (farmer_id) REFERENCES farmer (username_f))");
+        MyDB.execSQL("create Table orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT,farmer_id TEXT,customer_id TEXT,product_id INTEGER)");
 
     }
 
@@ -98,5 +99,36 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery("SELECT * FROM farmer", null);
         return data;
     }
+
+    public Cursor displayProducts(String farmer_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM farmer_products WHERE farmer_id = ?", new String[] {farmer_id});
+        return data;
+    }
+
+    public Boolean createOrder(String farmer_id, String customer_id, Integer product_id){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("farmer_id", farmer_id);
+        contentValues.put("customer_id", customer_id);
+        contentValues.put("product_id", product_id);
+        long result = MyDB.insert("orders", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Cursor getOrderContents(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM orders where farmer_id = ?", new String[]{id});
+        return data;
+    }
+
+    public Cursor getCustomerOrder(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM orders where customer_id = ?", new String[]{id});
+        return data;
+    }
+
 
 }
