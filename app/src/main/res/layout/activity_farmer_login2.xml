@@ -28,6 +28,13 @@
         android:text="Edit Password"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/vieworders_farm"/>
+    <Button
+        android:id="@+id/logout_farm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/editpass_farm"/>
 
 </RelativeLayout>
 
