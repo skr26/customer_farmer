@@ -29,4 +29,11 @@
         android:text="Sign in"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/passwordf"/>
+    <Button
+        android:id="@+id/btnsignupf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do Not have account.Sign up here"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/btnsigninf"/>
 </RelativeLayout>

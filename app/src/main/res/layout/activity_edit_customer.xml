@@ -5,39 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".edit_customer">
 
     <EditText
-        android:id="@+id/productname"
+        android:id="@+id/oldpasswordc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Name"
+        android:hint="Old Password"
         android:layout_marginTop="50dp"/>
 
     <EditText
-        android:id="@+id/productdesc"
+        android:id="@+id/newpasswordc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Description"
+        android:hint="New Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productname"/>
+        android:layout_below="@+id/oldpasswordc"/>
 
     <EditText
-        android:id="@+id/productprice"
+        android:id="@+id/confpasswordc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Price"
+        android:hint="Confirm Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productdesc"/>
+        android:layout_below="@+id/newpasswordc"/>
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/change2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD PRODUCT"
+        android:text="Change Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productprice"/>
-
+        android:layout_below="@+id/confpasswordc"/>
 
 
 </RelativeLayout>

@@ -5,39 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".SignupActivity">
 
     <EditText
-        android:id="@+id/productname"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Name"
+        android:hint="User Name"
         android:layout_marginTop="50dp"/>
 
     <EditText
-        android:id="@+id/productdesc"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Description"
+        android:hint="Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productname"/>
+        android:layout_below="@+id/username"/>
 
     <EditText
-        android:id="@+id/productprice"
+        android:id="@+id/repassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Product Price"
+        android:hint="Retype Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productdesc"/>
+        android:layout_below="@+id/password"/>
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/btnsignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD PRODUCT"
+        android:text="Register"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productprice"/>
-
-
-
+        android:layout_below="@+id/repassword"/>
 </RelativeLayout>

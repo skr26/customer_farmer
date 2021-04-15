@@ -5,39 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/productname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Product Name"
-        android:layout_marginTop="50dp"/>
-
-    <EditText
-        android:id="@+id/productdesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Product Description"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/productname"/>
-
-    <EditText
-        android:id="@+id/productprice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Product Price"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/productdesc"/>
+    tools:context=".FarmerLoginActivity">
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/addproduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD PRODUCT"
+        android:text="Add Product"
+        android:layout_marginTop="180dp" />
+
+    <Button
+        android:id="@+id/vieworders_farm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="view orders"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/productprice"/>
-
-
+        android:layout_below="@+id/addproduct"/>
+    <Button
+        android:id="@+id/editpass_farm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Password"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/vieworders_farm"/>
 
 </RelativeLayout>
+

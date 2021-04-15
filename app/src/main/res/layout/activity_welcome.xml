@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".WelcomeActivity">
+    <ImageView
+        android:src="@drawable/test_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"/>
+    <Button
+        android:id="@+id/farmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FARMER"
+        android:backgroundTint="@color/orange"
+        android:background="@color/white"
+        android:layout_marginTop="400dp"
+        android:layout_below="@drawable/test_image"/>
+
+    <Button
+        android:id="@+id/customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUSTOMER"
+        android:backgroundTint="@color/orange_shade"
+
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/farmer"/>
+</RelativeLayout>
