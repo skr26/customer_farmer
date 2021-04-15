@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class productActivity extends AppCompatActivity {
 
     EditText productname, productdesc, productprice;
-    Button addproduct,v;
+    Button addproduct,v,edit;
     DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +21,8 @@ public class productActivity extends AppCompatActivity {
         productdesc = (EditText) findViewById(R.id.productdesc);
         productprice = (EditText) findViewById(R.id.productprice);
         addproduct = (Button) findViewById(R.id.add);
-        v=(Button) findViewById(R.id.orders_farmer);
         DB = new DBHelper(this);
-        final String f_id = getIntent().getStringExtra("GET_FARMER_ID");
+        final String f_id = getIntent().getStringExtra("farmer_id");
 
         addproduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +37,6 @@ public class productActivity extends AppCompatActivity {
                     Boolean insert = DB.insertProduct(p_name, p_desc, p_price, f_id);
                     if(insert==true){
                         Toast.makeText(productActivity.this, "Product added successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                        startActivity(intent);
                     }
                     else{
                         Toast.makeText(productActivity.this, "Product Adding Failed", Toast.LENGTH_SHORT).show();
@@ -47,23 +44,5 @@ public class productActivity extends AppCompatActivity {
 
                 } }
         });
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), vieworders_farmer.class);
-                startActivity(intent);
-            }
-        });
-
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), vieworders_farmer.class);
-                intent.putExtra("farmer_id",f_id);
-                startActivity(intent);
-            }
-        });
-
-
     }
 }

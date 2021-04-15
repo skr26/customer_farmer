@@ -18,8 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("create Table farmer(username_f TEXT primary key, password_f TEXT)");
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
         MyDB.execSQL("create Table farmer_products(product_id INTEGER PRIMARY KEY AUTOINCREMENT, farmer_id TEXT,product_name TEXT, product_desc TEXT, product_price INTEGER, FOREIGN KEY (farmer_id) REFERENCES farmer (username_f))");
-        MyDB.execSQL("create Table orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT,farmer_id TEXT,customer_id TEXT,product_id INTEGER)");
-
+        MyDB.execSQL("create Table orders(order_id INTEGER PRIMARY KEY AUTOINCREMENT,farmer_id TEXT,customer_id TEXT,product_id INTEGER,FOREIGN KEY(farmer_id) REFERENCES farmer(username_f),FOREIGN KEY(product_id) REFERENCES farmer_products(product_id),FOREIGN KEY (customer_id) references users(username))");
     }
 
     @Override
@@ -120,14 +119,34 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Cursor getOrderContents(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM orders where farmer_id = ?", new String[]{id});
+        Cursor data = db.rawQuery("SELECT * FROM orders,farmer_products where orders.farmer_id = ? and farmer_products.product_id=orders.product_id", new String[]{id});
         return data;
     }
 
     public Cursor getCustomerOrder(String id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM orders where customer_id = ?", new String[]{id});
+        Cursor data = db.rawQuery("SELECT * FROM orders,farmer_products where customer_id = ?and orders.product_id=farmer_products.product_id", new String[]{id});
         return data;
+    }
+    public Boolean updatepassword(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        long result = MyDB.update("users", contentValues, "username = ?",new String[] { username } );
+        if(result==-1) return false;
+        else
+            return true;
+    }
+    public Boolean updatepassword_farmer(String username, String password){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("username_f", username);
+        contentValues.put("password_f", password);
+        long result = MyDB.update("farmer", contentValues, "username_f = ?",new String[] { username } );
+        if(result==-1) return false;
+        else
+            return true;
     }
 
 

@@ -55,5 +55,6 @@ public class farmer_signup extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

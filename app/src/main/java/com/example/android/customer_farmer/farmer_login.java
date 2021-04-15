@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class farmer_login extends AppCompatActivity {
     EditText username, password;
-    Button btnlogin;
+    Button btnlogin,signup;
     DBHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class farmer_login extends AppCompatActivity {
         username = (EditText) findViewById(R.id.usernamef);
         password = (EditText) findViewById(R.id.passwordf);
         btnlogin = (Button) findViewById(R.id.btnsigninf);
+        signup = (Button) findViewById(R.id.btnsignupf);
         DB = new DBHelper(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
@@ -36,13 +37,20 @@ public class farmer_login extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkfarmerpassword(user, pass);
                     if(checkuserpass==true){
                         Toast.makeText(farmer_login.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),productActivity.class);
+                        Intent intent = new Intent(getApplicationContext(),FarmerLoginActivity.class);
                         intent.putExtra("GET_FARMER_ID", user);
                         startActivity(intent);
                     }else{
                         Toast.makeText(farmer_login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), farmer_signup.class);
+                startActivity(intent);
             }
         });
     }

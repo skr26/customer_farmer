@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class vieworders_farmer extends AppCompatActivity {
-   DBHelper myDB;
+    DBHelper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +29,16 @@ public class vieworders_farmer extends AppCompatActivity {
         }else{
             while(data.moveToNext()){
                 StringBuffer bf = new StringBuffer();
+                bf.append("Order-ID:");
                 bf.append(data.getString(0) + "\n");
+                bf.append("Customer-ID:");
                 bf.append(data.getString(1) + "\n");
-                bf.append(data.getString(2) + "\n");
+                bf.append("Product-Name:");
                 bf.append(data.getString(3) + "\n");
+                bf.append("Product-Price:");
+                bf.append(data.getString(4) + "\n");
+                bf.append("Product-Details:");
+                bf.append(data.getString(5) + "\n");
                 theList.add(bf.toString());
                 // theList.add(data.getString(0));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);

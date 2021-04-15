@@ -40,10 +40,11 @@ public class OrderProducts extends AppCompatActivity {
         }else{
             while(data.moveToNext()){
                 StringBuffer bf = new StringBuffer();
-                    bf.append(data.getString(0) + "\n");
-                    bf.append(data.getString(1) + "\n");
+                bf.append("Product-Name:");
                 bf.append(data.getString(2) + "\n");
+                bf.append("Product-Details:");
                 bf.append(data.getString(3) + "\n");
+                bf.append("Product-Product:");
                 bf.append(data.getString(4));
                 pList.add(bf.toString());
                 idL.add(data.getInt(0));
