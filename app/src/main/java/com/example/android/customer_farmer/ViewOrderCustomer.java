@@ -29,16 +29,12 @@ public class ViewOrderCustomer extends AppCompatActivity {
         }else{
             while(data.moveToNext()){
                 StringBuffer bf = new StringBuffer();
-                bf.append("Order-Id");
+                bf.append("Order-ID: ");
                 bf.append(data.getString(0) + "\n");
-                bf.append("Farmer-Id:");
+                bf.append("Farmer-ID: ");
                 bf.append(data.getString(1) + "\n");
-                bf.append("Product-Name:");
-                bf.append(data.getString(5) + "\n");
-                bf.append("Product-Details:");
-                bf.append(data.getString(6) + "\n");
-                bf.append("Product-Price:");
-                bf.append(data.getString(7) );
+                bf.append("Product-ID: ");
+                bf.append(data.getString(3));
                 theList.add(bf.toString());
                 // theList.add(data.getString(0));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);

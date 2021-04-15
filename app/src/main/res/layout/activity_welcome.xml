@@ -7,18 +7,29 @@
     android:padding="10dp"
     android:orientation="vertical"
     tools:context=".WelcomeActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FARMER CUSTOMER"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="22sp"/>
+
     <ImageView
-        android:src="@drawable/test_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/cf" />
+
     <Button
         android:id="@+id/farmer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="FARMER"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="#a4c639"
         android:background="@color/white"
         android:layout_marginTop="400dp"
         android:layout_below="@drawable/test_image"/>
@@ -28,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CUSTOMER"
-        android:backgroundTint="@color/orange_shade"
+        android:backgroundTint="#a4c639"
 
         android:layout_marginTop="50dp"
         android:layout_below="@+id/farmer"/>
