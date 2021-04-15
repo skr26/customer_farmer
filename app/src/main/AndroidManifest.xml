@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".vieworders_farmer"></activity>
+        <activity android:name=".CustomerLoginActivity"></activity>
+        <activity android:name=".FarmerLoginActivity" />
+        <activity android:name=".CustomerActivity" />
+        <activity android:name=".FarmerActivity" />
+        <activity android:name=".edit_customer" />
+        <activity android:name=".SignupActivity" />
         <activity android:name=".ViewOrderCustomer" />
         <activity android:name=".OrderProducts" />
+        <activity android:name=".vieworders_farmer" />
         <activity android:name=".ViewListContents" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".farmer_signup" />
-        <activity android:name=".farmer_login" />
+        <activity android:name=".edit_farmer" />
         <activity android:name=".productActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".farmer_login" />
+        <activity android:name=".farmer_signup" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
